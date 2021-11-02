@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  jenkins:
+    build: .
+    image: customjenkins
+    restart: always
+    volumes:
+      - jenkins-data:/var/jenkins_home
+    ports:
+      - "8002:8080"
+      - "8003:50000"
+volumes:
+  jenkins-data:
